@@ -1,10 +1,10 @@
 #!/bin/bash
-#run by ./Count_SNP_reads_per_gene_for_RNA_seq.sh bam1 bam2 bam3 SNPs_genes_B73 SNPs_genes_NAM genotype DIR out
+#run by ./Count_SNP_reads_per_gene_for_RNA_seq.sh bam1 bam2 bam3 SNPs_genes_B73 SNPs_genes_parent2 genotype DIR out
 EXPECTED_ARGS=8
 E_BADARGS=1
 if [ $# -ne $EXPECTED_ARGS ]
 then
-  echo "Usage: `basename $0` bam1 bam2 bam3 SNPs_genes_B73 SNPs_genes_NAM genotype DIR out"
+  echo "Usage: `basename $0` bam1 bam2 bam3 SNPs_genes_B73 SNPs_genes_parent2 genotype DIR out"
   exit $E_BADARGS
 fi
 bam1=$1
@@ -119,7 +119,7 @@ cat ${g}.B73.reads.Rep1_${out}.bed ${g}.B73.reads.Rep2_${out}.bed ${g}.B73.reads
 
 gawk -v OFS='\t' 'NR==FNR {a[$1]=$1; next} ($1 in a){print $0}' ${g}.B73.SNPs_with_reads_${out}.txt B73.${g}.SNPs_with_reads_${out}.txt  > B73.${g}.SNPs_with_reads_both_${out}.txt
 
-echo "cont reads per gene on SNPs with reads in both alleles"
+echo "count reads per gene on SNPs with reads in both alleles"
 
 for r in Rep1 Rep2 Rep3; do gawk -v OFS='\t' 'NR==FNR {a[$1]=$1; next} ($7":"$9":"$11 in a){print $4,$11}' B73.${g}.SNPs_with_reads_both_${out}.txt B73.${g}.reads.${r}_${out}.bed |sort|uniq| gawk -v OFS='\t' '{print $2}'|sort| uniq -c  > B73.${g}.readcounts.genes.${r}_${out}.bed; done
 
