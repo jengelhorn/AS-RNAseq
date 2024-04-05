@@ -59,7 +59,7 @@ This script generates XXX
 
 To do: explain how genes with 0 reads are excluded
 
-# normalise_allele_counts.sh
+# normalise_allele_counts_git.sh
 
 Example command:
 
