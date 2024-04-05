@@ -44,7 +44,7 @@ Example command:
 This script is employed when no translation file for gene names is available. Such a translation file is generated within this script based on SNP positions overlapping with the genes and only genes with on the same strand in both genotypes are retained. Otherwise, the same input as for SNP_Gene_files_for_RNA_seq_git.sh is required.
 
 
-# Count_SNP_reads_per_gene_for_RNA_seq_new10_22.sh
+# Count_SNP_reads_per_gene_for_RNA_seq_git.sh
 
 Example command:
 
