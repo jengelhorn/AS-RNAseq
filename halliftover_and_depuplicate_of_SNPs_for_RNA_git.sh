@@ -14,7 +14,6 @@ dir=$2
 tsv=$3
 hal=$4
 
-export PATH="/netscratch/dep_psl/grp_frommer/Thomas/bin/bedops/bin:$PATH"
 
 
 
