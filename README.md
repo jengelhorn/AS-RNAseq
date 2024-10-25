@@ -13,7 +13,6 @@ Example command:
 
 This script generates two files containing the positions of all 1:1 mappable SNPs in an F1 hybrid with unique chromosome names for each parent (where one parent is B73 and one is [genotype]).
 
-- requires the bedops toolkit (bedops.readthedocs.io) and the path to this toolkit needs to be updated in the script
 - expects SNP file in tsv format from Cactus (or any other 0-based! SNP file in the format CHR POS)
 - expects a hal file where one genome is called B73 and the other has the same name as specified in "genotype", e.g. Mo17
 - returns two files named B73.[genotype].ID.hallifted.SNPs.bed  [genotype].B73.ID.hallifted.SNPs.bed
